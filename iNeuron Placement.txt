@@ -1,0 +1,99 @@
+Que.1]
+
+file_content= open("example.txt", "rt")
+
+file_out = open("udexample.txt", "wt")
+
+for line in file_content:
+    file_out.write(line.replace('placement', 'screening'))
+    file_content.close()
+    file_out.close()
+
+
+
+
+Que.2]
+
+1)Abstract Classes in Python-An abstract class can be considered as a blueprint for other classes. It allows you to create a set of methods that must be created within any child classes built from the abstract class. A class which contains one or more abstract methods is called an abstract class.
+
+# Python program showing
+# implementation of abstract
+# class through subclassing
+
+import abc
+
+class parent:	
+	def geeks(self):
+		pass
+
+class child(parent):
+	def geeks(self):
+		print("child class")
+
+# Driver code
+print( issubclass(child, parent))
+print( isinstance(child(), parent))
+
+Output: 
+ 
+
+True
+True
+
+
+2)Multiple Inheritance in Python-Inheritance is the mechanism to achieve the re-usability of code as one class(child class) can derive the properties of another class(parent class). It also provides transitivity.
+
+# Python Program to depict multiple inheritance
+# when every class defines the same method
+
+class Class1:
+	def m(self):
+		print("In Class1")
+	
+class Class2(Class1):
+	def m(self):
+		print("In Class2")
+
+class Class3(Class1):
+	def m(self):
+		print("In Class3")	
+	
+class Class4(Class2, Class3):
+	def m(self):
+		print("In Class4")
+
+obj = Class4()
+obj.m()
+
+Class2.m(obj)
+Class3.m(obj)
+Class1.m(obj)
+
+
+Output:
+
+In Class4
+In Class2
+In Class3
+In Class1
+
+
+
+3) Decorator in Python-Decorators allow us to wrap another function in order to extend the behaviour of the wrapped function, without permanently modifying it.
+
+# Python program to illustrate functions
+# can be treated as objects
+def shout(text):
+	return text.upper()
+
+print(shout('Hello'))
+
+yell = shout
+
+print(yell('Hello'))
+
+Output:
+
+HELLO
+HELLO
+
